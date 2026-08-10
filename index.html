@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7e680ed7">
+<link rel="stylesheet" href="styles.css?v=82307e81">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
 <header class="nav">
   <div class="nav-in">
     <div class="nav-side"><span>Biotecnologia · Brasil</span></div>
-    <a class="wordmark" href="index.html">allev<span>o</span></a>
+    <a class="wordmark" href="index.html"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20a12 12 0 0 0 24 0"/><path d="M25 24a9 9 0 0 0 18 0"/></g></svg><span class="wm-t">allev<span>o</span></span></a>
     <div class="nav-side nav-side--r"><a href="#contato" style="color:inherit;text-decoration:none">Fale conosco</a></div>
   </div>
   <nav class="nav-links">
@@ -112,7 +112,7 @@
 
   <!-- ===================================================== ATO 1 -->
   <section class="act">
-    <img class="act-photo bw" src="img/filhote-jardim.png" alt="Filhote explorando o jardim">
+    <img class="act-photo bw" loading="lazy" src="img/filhote-jardim.png" alt="Filhote explorando o jardim">
     <div class="act-overlay">
       <div class="act-in">
         <div class="act-copy">
@@ -130,7 +130,7 @@
 
   <!-- ===================================================== ATO 2 (split) -->
   <section class="act-split">
-    <img class="bw" src="img/husky-correndo.png" alt="Cão correndo em ritmo acelerado">
+    <img class="bw" loading="lazy" src="img/husky-correndo.png" alt="Cão correndo em ritmo acelerado">
     <div class="act-split-copy">
       <span class="act-kicker">Adulto</span>
       <h2>Energia que acompanha</h2>
@@ -144,7 +144,7 @@
 
   <!-- ===================================================== ATO 3 -->
   <section class="act">
-    <img class="act-photo bw" src="img/golden-tutor.png" alt="Cão idoso descansando ao lado da tutora">
+    <img class="act-photo bw" loading="lazy" src="img/golden-tutor.png" alt="Cão idoso descansando ao lado da tutora">
     <div class="act-overlay">
       <div class="act-in">
         <div class="act-copy">
@@ -170,29 +170,39 @@
 
       <div class="benefits">
         <div class="benefit">
-          <span class="benefit-t">Longevidade</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.6 1.6M9 2h6"/></svg>
-          <div class="bars"><i class="b-imun"></i></div>
+          <img class="benefit-photo bw" src="img/golden-tutor.png" alt="Cão idoso ao lado da tutora" loading="lazy">
+          <div class="benefit-body">
+            <div class="benefit-head"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.6 1.6M9 2h6"/></svg><span class="benefit-t">Longevidade</span></div>
+            <div class="bars"><i class="b-imun"></i></div>
+          </div>
         </div>
         <div class="benefit">
-          <span class="benefit-t">Imunidade</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-4.35 7-10V5.5L12 3 5 5.5V11c0 5.65 7 10 7 10Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></svg>
-          <div class="bars"><i class="b-imun"></i><i class="b-mos"></i></div>
+          <img class="benefit-photo bw" src="img/labrador-senior.png" alt="Cão adulto em retrato" loading="lazy">
+          <div class="benefit-body">
+            <div class="benefit-head"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-4.35 7-10V5.5L12 3 5 5.5V11c0 5.65 7 10 7 10Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></svg><span class="benefit-t">Imunidade</span></div>
+            <div class="bars"><i class="b-imun"></i><i class="b-mos"></i></div>
+          </div>
         </div>
         <div class="benefit">
-          <span class="benefit-t">Saúde intestinal</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.5c0 2 2 2.2 2 4s-2 2-2 4 2 2 2 3.5V21"/><path d="M17 3v4.5c0 2-2 2.2-2 4s2 2 2 4-2 2-2 3.5V21"/><path d="M9 11.5h6"/></svg>
-          <div class="bars"><i class="b-mos"></i><i class="b-fos"></i></div>
+          <img class="benefit-photo bw" src="img/filhote-jardim.png" alt="Filhote explorando o jardim" loading="lazy">
+          <div class="benefit-body">
+            <div class="benefit-head"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.5c0 2 2 2.2 2 4s-2 2-2 4 2 2 2 3.5V21"/><path d="M17 3v4.5c0 2-2 2.2-2 4s2 2 2 4-2 2-2 3.5V21"/><path d="M9 11.5h6"/></svg><span class="benefit-t">Saúde intestinal</span></div>
+            <div class="bars"><i class="b-mos"></i><i class="b-fos"></i></div>
+          </div>
         </div>
         <div class="benefit">
-          <span class="benefit-t">Digestibilidade</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h9a5 5 0 0 1 0 10H8"/><path d="M11 13l-3 3 3 3"/></svg>
-          <div class="bars"><i class="b-fos"></i></div>
+          <img class="benefit-photo bw" src="img/jack-russell-capim.png" alt="Cão adulto no capim alto" loading="lazy">
+          <div class="benefit-body">
+            <div class="benefit-head"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h9a5 5 0 0 1 0 10H8"/><path d="M11 13l-3 3 3 3"/></svg><span class="benefit-t">Digestibilidade</span></div>
+            <div class="bars"><i class="b-fos"></i></div>
+          </div>
         </div>
         <div class="benefit">
-          <span class="benefit-t">Palatabilidade</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h18c0 4.4-4 8-9 8s-9-3.6-9-8Z"/><path d="M8 7.5c0-1.2 1-1.6 1-2.6M12 7c0-1.4 1-1.8 1-3M16 7.5c0-1.2 1-1.6 1-2.6"/></svg>
-          <div class="bars"><i class="b-umami"></i></div>
+          <img class="benefit-photo bw" src="img/gatinho-janela.png" alt="Gato filhote na janela" loading="lazy">
+          <div class="benefit-body">
+            <div class="benefit-head"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h18c0 4.4-4 8-9 8s-9-3.6-9-8Z"/><path d="M8 7.5c0-1.2 1-1.6 1-2.6M12 7c0-1.4 1-1.8 1-3M16 7.5c0-1.2 1-1.6 1-2.6"/></svg><span class="benefit-t">Palatabilidade</span></div>
+            <div class="bars"><i class="b-umami"></i></div>
+          </div>
         </div>
       </div>
 
@@ -228,7 +238,7 @@
   <!-- ===================================================== CIÊNCIA -->
   <section class="band" id="ciencia">
     <div class="spine sci reveal">
-      <img class="bw" src="img/ciencia-vidraria.png" alt="Vidraria de laboratório em fermentação">
+      <img class="bw sci-photo" src="img/ciencia-vidraria.png" alt="Vidraria de laboratório em fermentação" loading="lazy">
       <div class="stack g24">
         <p class="eyebrow">Nossa ciência</p>
         <h2>Conheça o modo de ação dos ingredientes Allevo</h2>
@@ -267,19 +277,19 @@
 
       <div class="posts">
         <a class="post" href="aprender.html#betaglucanas">
-          <img class="post-img bw" src="img/labrador-senior.png" alt="">
+          <img class="post-img bw" src="img/filhote-retrato.png" alt="" loading="lazy">
           <span class="post-meta">Imunidade · 6 min</span>
           <h3>Betaglucanas em pet food: o que a ciência mostra</h3>
           <p>Nem todo betaglucano é lido pelo sistema imune da mesma forma — a diferença está na ramificação, não no número no rótulo.</p>
         </a>
         <a class="post" href="aprender.html#imunossenescencia">
-          <img class="post-img bw" src="img/golden-tutor.png" alt="">
+          <img class="post-img bw" src="img/husky-correndo.png" alt="" loading="lazy">
           <span class="post-meta">Ciência · 6 min</span>
           <h3>Imunossenescência: o pet sênior pede formulação própria</h3>
           <p>A competência imune declina com a idade, e tratar o alimento sênior apenas como "menos calorias" ignora o principal motor de morbidade nessa fase.</p>
         </a>
         <a class="post" href="aprender.html#umami">
-          <img class="post-img bw" src="img/gato-cobertor.png" alt="">
+          <img class="post-img bw" src="img/gato-cobertor.png" alt="" loading="lazy">
           <span class="post-meta">Palatabilidade · 5 min</span>
           <h3>Umami tem ponto certo, não máximo</h3>
           <p>Palatabilidade em pet é curva com pico, não escada — e o pico do gato fica muito abaixo do pico do cão.</p>
@@ -333,7 +343,7 @@
 <footer>
   <div class="spine foot">
     <div class="stack g16">
-      <a class="wordmark" href="index.html">allev<span>o</span></a>
+      <a class="wordmark" href="index.html"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20a12 12 0 0 0 24 0"/><path d="M25 24a9 9 0 0 0 18 0"/></g></svg><span class="wm-t">allev<span>o</span></span></a>
       <p style="color:var(--muted);font-size:14.5px;max-width:34ch">Biotecnologia brasileira para a longevidade de cães e gatos.</p>
     </div>
     <div>
