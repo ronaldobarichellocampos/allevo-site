@@ -14,16 +14,18 @@
   --line:       #E2DFD9;
   --line-2:     #C9C5BD;
 
-  /* A única cor da interface — verde oliva da marca */
-  --allevo:     #4A5D23;  /* 7.29:1 sobre branco */
-  --allevo-dk:  #3F4F1E;  /* hover, 8.94:1 */
-  --allevo-sf:  #EFF2E7;
+  /* A única cor da interface — azul da marca.
+     Escolha competitiva: verde é a cor de toda a categoria de nutrição animal.
+     O azul é o espaço cromático vago, e diz ciência em vez de agro. */
+  --allevo:     #2B5B8C;  /* 7.05:1 sobre branco */
+  --allevo-dk:  #1E4368;  /* hover */
+  --allevo-sf:  #EAF0F7;
 
   /* Cores de produto — exclusivas do bloco de benefícios e das fichas.
      Calibradas para ≥4.5:1 como texto sobre branco E com branco por cima
      (elas viram fundo de botão). O âmbar original reprovava a 3.73:1.
-     O Imun acompanha o oliva da marca: é o produto-âncora. */
-  --imun:       #4A5D23;  /* 7.29:1 */
+     O Imun acompanha o azul da marca: é o produto-âncora. */
+  --imun:       #2B5B8C;  /* 7.05:1 */
   --mos:        #1B7A62;  /* 5.24:1 */
   --fos:        #9C4C24;  /* 6.05:1 */
   --umami:      #8A6408;  /* 5.37:1 */
@@ -46,8 +48,8 @@
   --white: #FFFFFF; --paper: #F7F6F3; --paper-2: #EDEBE6;
   --ink: #16181A; --ink-2: #3E4247; --muted: #6C7076;
   --line: #E2DFD9; --line-2: #C9C5BD;
-  --allevo: #4A5D23; --allevo-dk: #3F4F1E; --allevo-sf: #EFF2E7;
-  --imun: #4A5D23; --mos: #1B7A62; --fos: #9C4C24; --umami: #8A6408;
+  --allevo: #2B5B8C; --allevo-dk: #1E4368; --allevo-sf: #EAF0F7;
+  --imun: #2B5B8C; --mos: #1B7A62; --fos: #9C4C24; --umami: #8A6408;
 }
 :root[data-theme="dark"] {
   --white: #131517; --paper: #191C1F; --paper-2: #212528;
