@@ -60,6 +60,10 @@
 }
 
 * { box-sizing: border-box; }
+
+/* A nav e sticky (~86px). Sem isto o scroll suave entrega o leitor com o
+   destino parcialmente encoberto pelo proprio cabecalho. */
+section[id], article[id] { scroll-margin-top: 96px; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -74,7 +78,14 @@ body {
   overflow-x: hidden;
 }
 
-img { display: block; max-width: 100%; }
+/* Fade-in ao carregar. Cache/back-nav pulam a transicao (o navegador ja tem
+   o bitmap, nao ha o que revelar); carregamento fresco recebe 400ms. O
+   reveal.js adiciona .is-loaded via JS; sem JS o media query abaixo garante
+   que a foto nunca fica presa em opacity:0. */
+img { display: block; max-width: 100%; opacity: 0; transition: opacity 400ms var(--ease); }
+img.no-fade { transition: none; }
+img.is-loaded { opacity: 1; }
+@media (scripting: none) { img { opacity: 1; transition: none; } }
 
 /* Toda fotografia do site vive em preto e branco. */
 .bw { filter: grayscale(100%) contrast(1.05); }
@@ -134,7 +145,7 @@ p { margin: 0; max-width: 64ch; }
   font-family: var(--display); font-size: 14.5px; font-weight: 600;
   letter-spacing: 0.01em; text-decoration: none; cursor: pointer;
   transition: transform 150ms var(--ease), background-color 170ms ease,
-              color 170ms ease, border-color 170ms ease;
+              color 170ms ease, border-color 170ms ease, filter 170ms ease;
 }
 .btn:active { transform: scale(0.975); }
 .btn:focus-visible { outline: 2px solid var(--allevo); outline-offset: 3px; }
@@ -355,6 +366,7 @@ p { margin: 0; max-width: 64ch; }
 .need {
   display: flex; flex-direction: column; align-items: center;
   gap: 12px;
+  /* :active herda o mesmo fundo do hover — feedback de toque tambem sem mouse */
   padding: clamp(32px, 3.2vw, 44px) clamp(16px, 2vw, 24px) clamp(34px, 3.4vw, 48px);
   text-align: center; text-decoration: none;
   color: var(--ink);
@@ -377,6 +389,7 @@ p { margin: 0; max-width: 64ch; }
   .need:hover .need-t { color: var(--allevo); }
 }
 .need:focus-visible { outline: 2px solid var(--allevo); outline-offset: -2px; }
+.need:active { background: var(--allevo-sf); }
 
 /* ------------------------------------------------------------ Atos (bandas) */
 
@@ -498,6 +511,8 @@ p { margin: 0; max-width: 64ch; }
 .posts { display: grid; gap: 24px; grid-template-columns: 1fr; }
 @media (min-width: 760px) { .posts { grid-template-columns: repeat(3, 1fr); } }
 .post { text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 12px; }
+.post { transition: opacity 140ms var(--ease); }
+.post:active { opacity: 0.72; }
 .post-img { aspect-ratio: 3/2; width: 100%; object-fit: cover; }
 .post-meta {
   font-family: var(--display); font-size: 11.5px; font-weight: 600;
@@ -590,7 +605,8 @@ footer a { color: var(--ink-2); text-decoration: none; }
   transition: opacity 620ms var(--ease), transform 620ms var(--ease); }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .btn, .need, .post h3 { transition: none; }
+  .btn, .need, .post, .post h3, .toc a { transition: none; }
+  img { transition-duration: 120ms; }
 }
 
 /* --------------------------------------------------------------- Artigos */
@@ -620,6 +636,7 @@ footer a { color: var(--ink-2); text-decoration: none; }
   text-decoration: none; color: var(--ink);
   transition: padding-inline 200ms var(--ease), background-color 200ms ease;
 }
+.toc a:active { background: var(--paper); }
 .toc a:first-child { border-top: 1px solid var(--line); }
 .toc-n { font-family: var(--display); font-size: 13px; color: var(--allevo); font-weight: 600; }
 .toc-t { font-family: var(--display); font-weight: 600; font-size: 17.5px; letter-spacing: -0.02em; }
