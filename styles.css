@@ -36,15 +36,11 @@
   --band: clamp(64px, 8vw, 116px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --white:   #131517;  --paper: #191C1F;  --paper-2: #212528;
-    --ink:     #F2F1EE;  --ink-2: #C6C9CD;  --muted:   #969AA0;
-    --line:    #2E3235;  --line-2: #414649;
-    --allevo:  #7CB0E6;  --allevo-dk: #9CC6F2;  --allevo-sf: #16232F;
-    --imun:    #7CB0E6;  --mos: #4FC3A1;  --fos: #E8975C;  --umami: #E5C255;
-  }
-}
+/* O site é claro por decisão, não por padrão do sistema.
+   A referência da categoria — Royal Canin, Biorigin, Ohly — é toda light-only,
+   e aqui o branco é o fundo da marca: o preto só existe dentro das fotos.
+   Por isso NÃO seguimos prefers-color-scheme. O tema escuro continua definido
+   abaixo e só entra se alguém marcar data-theme="dark" explicitamente. */
 :root[data-theme="light"] {
   --white: #FFFFFF; --paper: #F7F6F3; --paper-2: #EDEBE6;
   --ink: #16181A; --ink-2: #3E4247; --muted: #6C7076;
