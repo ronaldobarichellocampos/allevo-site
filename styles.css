@@ -181,12 +181,7 @@ p { margin: 0; max-width: 64ch; }
   font-size: 27px; letter-spacing: -0.05em;
   text-decoration: none; color: var(--ink); line-height: 1;
   justify-self: center;
-  display: inline-flex; align-items: center; gap: 9px;
 }
-/* Dois arcos na mesma linha de base: vinculo no cruzamento, convivio no chao
-   compartilhado, e a forma de tigela entrega nutricao sem precisar apontar. */
-.mark { width: 1.05em; height: 1.05em; flex: none; }
-.wm-t { display: inline; }
 .wordmark span { color: var(--allevo); }
 
 .nav-links {
