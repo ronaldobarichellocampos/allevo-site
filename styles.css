@@ -211,6 +211,33 @@ p { margin: 0; max-width: 64ch; }
 @media (hover:hover){ .nav-links a:hover { color: var(--allevo); } }
 @media (min-width: 900px) { .nav-links { display: flex; } }
 
+/* Soluções: único item com submenu. Hover/focus-within — sem JS, porque o
+   resto do site já vive sem framework e um toggle de menu não merece um. */
+.nav-drop { position: relative; display: inline-flex; }
+.nav-drop-menu {
+  position: absolute; top: 100%; left: 50%; transform: translate(-50%, 4px);
+  margin-top: 12px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+  padding: 8px; min-width: 190px;
+  box-shadow: 0 16px 40px rgba(20, 24, 20, 0.10);
+  display: flex; flex-direction: column; gap: 2px;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 160ms var(--ease), transform 160ms var(--ease), visibility 160ms;
+  z-index: 30;
+}
+.nav-drop-menu a {
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
+  letter-spacing: normal; text-transform: none;
+  color: var(--ink); text-decoration: none;
+  padding: 9px 12px; border-radius: 7px; border-bottom: none;
+}
+@media (hover:hover) { .nav-drop-menu a:hover { background: var(--allevo-sf); color: var(--allevo); } }
+.nav-drop-menu a:focus-visible { outline: 2px solid var(--allevo); outline-offset: -2px; border-radius: 7px; }
+.nav-drop:hover .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0);
+}
+@media (prefers-reduced-motion: reduce) { .nav-drop-menu { transition: none; } }
+
 /* Faixa rolável no mobile */
 /* A faixa cortava 3 dos 6 links sem nenhum sinal de que rolava. A mascara
    dissolve a ultima palavra na borda: e o sinal padrao de "ha mais aqui". */
