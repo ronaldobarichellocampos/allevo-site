@@ -6,7 +6,9 @@
 <title>Aprender e Explorar — Allevo</title>
 <meta name="description" content="Conteúdo técnico sobre betaglucanas, imunossenescência e palatabilidade em pet food.">
 <link rel="canonical" href="https://allevo.bio/aprender.html">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Allevo">
 <meta property="og:locale" content="pt_BR">
@@ -21,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8bb478e4">
+<link rel="stylesheet" href="styles.css?v=90b54918">
 </head>
 <body>
 
@@ -36,19 +38,18 @@
 <header class="nav">
   <div class="nav-in">
     <div class="nav-side"><span>Biotecnologia · Brasil</span></div>
-    <a class="wordmark" href="index.html">alle<svg class="wordmark-v" viewBox="0 0 100 90" aria-hidden="true"><path d="M10 10 C 10 46, 32 64, 50 64 C 68 64, 90 46, 90 10" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round"/><path d="M39 62 C 39 62, 37 76, 40 80 C 44 85, 56 85, 60 80 C 63 76, 61 62, 61 62 Z" fill="currentColor"/></svg>o</a>
+    <a class="wordmark" href="index.html"><img src="img/logo/logo-default.png" alt="Allevo" class="wordmark-img"></a>
     <div class="nav-side nav-side--r"><a href="index.html#contato" style="color:inherit;text-decoration:none">Fale conosco</a></div>
   </div>
   <nav class="nav-links">
-      <a href="caes.html">Cães</a>
-      <a href="gatos.html">Gatos</a>
       <a href="produtos.html">Produtos</a>
       <div class="nav-drop">
         <a href="solucoes.html">Soluções</a>
         <div class="nav-drop-menu">
-          <a href="solucoes.html#imunidade">Imunidade</a>
-          <a href="solucoes.html#longevidade">Longevidade</a>
-          <a href="solucoes.html#palatabilidade">Palatabilidade</a>
+          <a href="solucoes-imunidade.html">Imunidade</a>
+          <a href="solucoes-longevidade.html">Longevidade</a>
+          <a href="solucoes-palatabilidade.html">Palatabilidade</a>
+          <a href="solucoes-saude-digestiva.html">Saúde Digestiva</a>
         </div>
       </div>
       <a href="aprender.html" aria-current="page">Aprender e Explorar</a>
@@ -57,8 +58,6 @@
   </nav>
   <div class="nav-mob">
     <div class="nav-mob-in">
-      <a href="caes.html">Cães</a>
-      <a href="gatos.html">Gatos</a>
       <a href="produtos.html">Produtos</a>
       <a href="solucoes.html">Soluções</a>
       <a href="aprender.html" aria-current="page">Aprender e Explorar</a>
@@ -85,9 +84,9 @@
   <section class="band band--tight">
     <div class="spine stack g32 reveal">
       <div class="toc">
-        <a href="#betaglucanas"><span class="toc-n">01</span><span class="toc-t">Betaglucanas em pet food: o que a ciência mostra</span><span class="toc-m">Imunidade · 6 min</span></a>
-        <a href="#imunossenescencia"><span class="toc-n">02</span><span class="toc-t">Imunossenescência: o pet sênior pede formulação própria</span><span class="toc-m">Ciência · 6 min</span></a>
-        <a href="#umami"><span class="toc-n">03</span><span class="toc-t">Umami tem ponto certo, não máximo</span><span class="toc-m">Palatabilidade · 5 min</span></a>
+        <a href="#betaglucanas"><span class="toc-n">01</span><span class="toc-t">Betaglucanas em pet food: o que a ciência mostra</span><span class="toc-m" style="color:var(--t-imunidade)">Imunidade · 6 min</span></a>
+        <a href="#imunossenescencia"><span class="toc-n">02</span><span class="toc-t">Imunossenescência: o pet sênior pede formulação própria</span><span class="toc-m" style="color:var(--com-teal)">Ciência · 6 min</span></a>
+        <a href="#umami"><span class="toc-n">03</span><span class="toc-t">Umami tem ponto certo, não máximo</span><span class="toc-m" style="color:var(--t-palatabilidade)">Palatabilidade · 5 min</span></a>
       </div>
     </div>
   </section>
@@ -95,7 +94,7 @@
   <section class="band" id="betaglucanas">
     <div class="spine"><article class="article reveal">
       <div class="article-head stack g12">
-        <span class="post-meta">Imunidade · 6 min de leitura</span>
+        <span class="post-meta" style="color:var(--t-imunidade)">Imunidade · 6 min de leitura</span>
         <h2>Betaglucanas em pet food: o que a ciência mostra</h2>
         <p class="lede">Nem todo betaglucano é lido pelo sistema imune da mesma forma — a diferença está na ramificação, não no número no rótulo.</p>
       </div>
@@ -129,7 +128,7 @@
   <section class="band band--paper" id="imunossenescencia">
     <div class="spine"><article class="article reveal">
       <div class="article-head stack g12">
-        <span class="post-meta">Ciência · 6 min de leitura</span>
+        <span class="post-meta" style="color:var(--com-teal)">Ciência · 6 min de leitura</span>
         <h2>Imunossenescência: o pet sênior pede formulação própria</h2>
         <p class="lede">A competência imune declina com a idade — e tratar o alimento sênior apenas como "menos calorias" ignora o principal motor de morbidade nessa fase.</p>
       </div>
@@ -160,7 +159,7 @@
   <section class="band" id="umami">
     <div class="spine"><article class="article reveal">
       <div class="article-head stack g12">
-        <span class="post-meta">Palatabilidade · 5 min de leitura</span>
+        <span class="post-meta" style="color:var(--t-palatabilidade)">Palatabilidade · 5 min de leitura</span>
         <h2>Umami tem ponto certo, não máximo</h2>
         <p class="lede">Palatabilidade em pet é curva com pico, não escada — e o pico do gato fica muito abaixo do pico do cão.</p>
       </div>
@@ -227,14 +226,12 @@
 <footer>
   <div class="spine foot">
     <div class="stack g16">
-      <a class="wordmark" href="index.html">alle<svg class="wordmark-v" viewBox="0 0 100 90" aria-hidden="true"><path d="M10 10 C 10 46, 32 64, 50 64 C 68 64, 90 46, 90 10" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round"/><path d="M39 62 C 39 62, 37 76, 40 80 C 44 85, 56 85, 60 80 C 63 76, 61 62, 61 62 Z" fill="currentColor"/></svg>o</a>
+      <a class="wordmark" href="index.html"><img src="img/logo/logo-default.png" alt="Allevo" class="wordmark-img"></a>
       <p style="color:var(--muted);font-size:14.5px;max-width:34ch">Biotecnologia brasileira para a longevidade de cães e gatos.</p>
     </div>
     <div>
       <h4>Navegação</h4>
       <div class="foot-col">
-        <a href="caes.html">Cães</a>
-        <a href="gatos.html">Gatos</a>
         <a href="produtos.html">Produtos</a>
         <a href="solucoes.html">Soluções</a>
         <a href="aprender.html">Aprender e Explorar</a>

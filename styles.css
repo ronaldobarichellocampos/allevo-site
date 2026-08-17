@@ -30,10 +30,29 @@
   --fos:        #9C4C24;  /* 6.05:1 */
   --umami:      #8A6408;  /* 5.37:1 */
 
-  /* Cor oficial do V no guia de logotipo (Verde Eucalipto — Longevidade,
-     #0B5D4B): território mais próximo do institucional. Só o símbolo usa
-     essa cor por ora — o resto da interface segue no azul. */
-  --allevo-v:   #0B5D4B;
+  /* Guia de marca — paleta oficial (slide "7. Cores"). */
+  --oliva:      #66713F;
+  --oliva-45:   #8A9464;
+  --oliva-30:   #ADB489;
+  --oliva-15:   #D0D3BC;
+  --mel:        #D9A46A;
+  --mel-dk:     #C28E56;  /* hover do botão primário, ~10% mais escuro */
+  --floresta:   #2B331C;
+
+  /* Territórios / soluções — cor do V no logo muda por página. */
+  --t-longevidade:    #0B5D4B;
+  --t-palatabilidade: #D83B1E;
+  --t-imunidade:       #006CB3;
+  --t-saude:           #64513D;
+  --t-longevidade-sf:    #E3F0EC;
+  --t-palatabilidade-sf: #FBE7E3;
+  --t-imunidade-sf:       #E3EEF5;
+  --t-saude-sf:           #EFEAE4;
+
+  /* Paleta de comunicação — uso pontual (categorias de conteúdo). */
+  --com-teal:    #00818F;
+  --com-roxo:    #6F2277;
+  --com-laranja: #FF5400;
 
   --display: 'Sora', system-ui, sans-serif;
   --sans: 'Public Sans', system-ui, -apple-system, sans-serif;
@@ -55,7 +74,6 @@
   --line: #E2DFD9; --line-2: #C9C5BD;
   --allevo: #2B5B8C; --allevo-dk: #1E4368; --allevo-sf: #EAF0F7;
   --imun: #2B5B8C; --mos: #1B7A62; --fos: #9C4C24; --umami: #8A6408;
-  --allevo-v: #0B5D4B;
 }
 :root[data-theme="dark"] {
   --white: #131517; --paper: #191C1F; --paper-2: #212528;
@@ -63,7 +81,6 @@
   --line: #2E3235; --line-2: #414649;
   --allevo: #7CB0E6; --allevo-dk: #9CC6F2; --allevo-sf: #16232F;
   --imun: #7CB0E6; --mos: #4FC3A1; --fos: #E8975C; --umami: #E5C255;
-  --allevo-v: #3FBF8F;
 }
 
 * { box-sizing: border-box; }
@@ -158,11 +175,13 @@ p { margin: 0; max-width: 64ch; }
 .btn:focus-visible { outline: 2px solid var(--allevo); outline-offset: 3px; }
 .btn::after { content: "→"; font-weight: 400; }
 
-.btn--primary { background: var(--allevo); color: #FFF; }
+/* Botão primário no Mel do guia — contraste checado: branco em cima do Mel
+   dá só 2.22:1 (reprova AA), --ink em cima dá 8.03:1. */
+.btn--primary { background: var(--mel); color: var(--ink); }
 .btn--outline { background: transparent; color: var(--ink); border-color: var(--line-2); }
 
 @media (hover: hover) and (pointer: fine) {
-  .btn--primary:hover { background: var(--allevo-dk); }
+  .btn--primary:hover { background: var(--mel-dk); }
   .btn--outline:hover { border-color: var(--allevo); color: var(--allevo); }
 }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -195,23 +214,15 @@ p { margin: 0; max-width: 64ch; }
 .nav-side--r { justify-content: flex-end; }
 
 .wordmark {
-  font-family: var(--display); font-weight: 700;
-  font-size: 27px; letter-spacing: -0.05em;
-  text-decoration: none; color: var(--ink); line-height: 1;
+  text-decoration: none; line-height: 1;
   justify-self: center;
-  display: inline-flex; align-items: baseline;
+  display: inline-flex; align-items: center;
 }
-/* O V — símbolo proprietário da Allevo, forma de tigela com pé inferior.
-   Guia de marca: "o V pode mudar de cor, sua identidade nunca" — a curva e
-   o pé não se alteram entre páginas, só a cor de --allevo-v se quisermos
-   variar por território no futuro. */
-.wordmark-v {
-  width: 0.6em; height: 0.56em;
-  margin-inline: 0.02em;
-  transform: translateY(0.05em);
-  color: var(--allevo-v, #0B5D4B);
-  flex: none;
-}
+/* Logo oficial do guia de marca — arquivo do usuário, recortado, não um
+   traço redesenhado. .wordmark-img troca por página nas Soluções, via
+   atributo src (ver .wordmark-img[data-territorio] em cada página). */
+.wordmark-img { height: 27px; width: auto; display: block; }
+.foot .wordmark-img { height: 32px; }
 
 .nav-links {
   max-width: var(--spine); margin-inline: auto;
@@ -422,19 +433,18 @@ p { margin: 0; max-width: 64ch; }
 /* Na grade de 2 colunas do mobile a 2a celula ficava com borda colada na
    borda da viewport. */
 @media (max-width: 759px) { .need:nth-child(2n) { border-right: none; } }
-.need svg { width: 34px; height: 34px; stroke: var(--ink); fill: none;
-            stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;
-            transition: stroke 180ms ease; }
+/* --t/--t-sf: cor do território, definida inline por card (guia de cores —
+   cada card usa a cor da solução correspondente, só no ícone e no título). */
+.need svg { width: 34px; height: 34px; stroke: var(--t, var(--ink)); fill: none;
+            stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 .need-t { font-family: var(--display); font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
-          transition: color 180ms ease; }
+          color: var(--t, var(--ink)); }
 .need-d { font-size: 13.5px; color: var(--muted); line-height: 1.5; max-width: 26ch; }
 @media (hover:hover){
-  .need:hover { background: var(--allevo-sf); }
-  .need:hover svg { stroke: var(--allevo); }
-  .need:hover .need-t { color: var(--allevo); }
+  .need:hover { background: var(--t-sf, var(--allevo-sf)); }
 }
-.need:focus-visible { outline: 2px solid var(--allevo); outline-offset: -2px; }
-.need:active { background: var(--allevo-sf); }
+.need:focus-visible { outline: 2px solid var(--t, var(--allevo)); outline-offset: -2px; }
+.need:active { background: var(--t-sf, var(--allevo-sf)); }
 
 /* ------------------------------------------------------------ Atos (bandas) */
 
